@@ -1,0 +1,33 @@
+local setup, null_ls = pcall(require, "null-ls")
+if not setup then
+	return
+end
+
+-- This local variable is also taken from where the on_attach
+-- method was taken from below.
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+null_ls.setup({
+	sources = {
+		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.diagnostics.eslint_d,
+	},
+	-- Format files on save.
+	-- Taken from https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
+	on_attach = function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr })
+					-- instead on later neovim version, you should use
+					-- vim.lsp.buf.format({ async = false }) instead
+					vim.lsp.buf.format({ async = false })
+				end,
+			})
+		end
+	end,
+})
