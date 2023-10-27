@@ -1,7 +1,7 @@
 local opt = vim.opt -- for conciseness
 
 -- line numbers
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 
 -- tabs & indentation
@@ -9,6 +9,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.preserveindent = true
 
 -- line wrapping
 opt.wrap = false
@@ -37,4 +38,3 @@ opt.splitbelow = true
 
 -- consider a hyphen as part of a word
 opt.iskeyword:append("-")
-

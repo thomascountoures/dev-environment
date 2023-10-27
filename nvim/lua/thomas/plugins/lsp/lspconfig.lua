@@ -23,7 +23,7 @@ local on_attach = function(client, bufnr) -- bufnr stands for buffer number
 
 	-- Define keybinds
 	-- Lspsaga keybinds
-	keymap.set("n", "gf", vim.lsp.buf.references(), opts) -- show definition, references
+	keymap.set("n", "gr", vim.lsp.buf.references, opts) -- show definition, references
 	keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
 	keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 	keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr) -- bufnr stands for buffer number
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 	keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
 
-	keymap.set("n", "gD", vim.lsp.buf.definition(), opts) -- got to declaration
+	keymap.set("n", "gD", vim.lsp.buf.definition, opts) -- got to declaration
 	keymap.set("n", "gi", vim.lsp.buf.implementation, opts) -- go to implementation
 
 	-- Todo: Figure out
@@ -124,5 +124,3 @@ nvim_lspconfig.lua_ls.setup({
 		},
 	},
 })
-
-vim.lsp.set_log_level("debug")

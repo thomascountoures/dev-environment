@@ -28,6 +28,12 @@ return require("packer").startup(function(use)
 	-- Kanagawa Colour Scheme
 	use("rebelot/kanagawa.nvim")
 
+	-- Gruvbox Colour Scheme
+	use("morhetz/gruvbox")
+
+	-- Nightfly Colour Scheme
+	use("bluz71/vim-nightfly-colors")
+
 	-- tmux and split window navigation
 	use("christoomey/vim-tmux-navigator")
 
@@ -145,6 +151,9 @@ return require("packer").startup(function(use)
 	-- the opening tag. For instance, if you have <div>|</div> and you change
 	-- div to span, the closing tag will automatically update to </span>.
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
+
+	-- Gitsigns - shows changed lines, etc.
+	use("lewis6991/gitsigns.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -10,7 +10,7 @@ keymap.set("i", "jw", "<ESC>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- Don't put deleted characters in the register (put in "Black Hole" register)
-keymap.set("n", "x", '"_x') 
+keymap.set("n", "x", '"_x')
 
 -- Remap number incrementer and decrementer commands
 keymap.set("n", "<leader>+", "<C-a>")
@@ -43,3 +43,6 @@ keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
 
 -- To Trim Freakin' Whitespaces.
 keymap.set("n", "<leader>tw", "<cmd>%s/\\s\\+$//e<CR>")
+
+-- Get rid of highlighting upon hitting enter.
+keymap.set("n", "<CR>", "<cmd>noh<CR>")

@@ -12,6 +12,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.diagnostics.eslint_d,
+		null_ls.builtins.formatting.rubocop,
 	},
 	-- Format files on save.
 	-- Taken from https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
