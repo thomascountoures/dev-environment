@@ -25,14 +25,17 @@ return require("packer").startup(function(use)
 	-- plenary provides a collection of util functions/modules that can be used by other nvim plugins
 	use("nvim-lua/plenary.nvim")
 
-	-- Kanagawa Colour Scheme
+	-- Kanagawa Colour Scheme Pack
 	use("rebelot/kanagawa.nvim")
 
-	-- Gruvbox Colour Scheme
+	-- Gruvbox Colour Scheme Pack
 	use("morhetz/gruvbox")
 
 	-- Nightfly Colour Scheme
 	use("bluz71/vim-nightfly-colors")
+
+	-- Tokyo Night Theme Pack
+	use("folke/tokyonight.nvim")
 
 	-- tmux and split window navigation
 	use("christoomey/vim-tmux-navigator")

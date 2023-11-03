@@ -15,5 +15,7 @@ gruvbox_color_scheme = "gruvbox"
 
 nightfly_color_scheme = "nightfly"
 
+tokyonight_color_schemes = { "tokyonight-night", "tokyonight-storm", "tokyonight-day", "tokyonight-moon" }
+
 -- Load chosen colorscheme here (just substitute the index)
-load_colorscheme(nightfly_color_scheme)
+load_colorscheme(tokyonight_color_schemes[2])
