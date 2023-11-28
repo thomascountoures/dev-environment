@@ -28,6 +28,20 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
+-- Function to create mappings for going to specific tab numbers
+local function map_tab_goto_keys()
+	for i = 1, 9 do -- Assuming you want to map the first 9 tabs
+		keymap.set("n", "<leader>tg" .. i, i .. "gt")
+	end
+end
+
+-- Call the function to create the mappings
+map_tab_goto_keys()
+
+-- Buffer maps
+keymap.set("n", "<leader>bn", ":bn<CR>")
+keymap.set("n", "<leader>bl", ":ls<CR>")
+
 -- Specifically for the vim-maximizer plugin
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
