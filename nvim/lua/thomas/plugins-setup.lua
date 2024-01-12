@@ -102,6 +102,7 @@ return require("packer").startup(function(use)
 	-- for a variety of language servers in neovim.
 	use("neovim/nvim-lspconfig")
 
+	use("ErichDonGubler/lsp_lines.nvim")
 	-- Step 3. This is to enhance the LSP autocomplete experience.
 	-- lspsaga.nvim takes the raw, functional features provided by
 	-- LSP in Neovim and wraps them in a more attractive and
