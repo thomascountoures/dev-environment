@@ -58,9 +58,14 @@ return require("packer").startup(function(use)
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
 
-	-- telescope (fuzzy finder) sorting algorithm (this is a dependency of the telescope plugin itself)
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.2" })
+	-- -- telescope (fuzzy finder) sorting algorithm (this is a dependency of the telescope plugin itself)
+	-- use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	-- use({ "nvim-telescope/telescope.nvim", tag = "0.1.2" })
+
+	use({
+		"ibhagwan/fzf-lua",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 
 	-- autocompletion
 

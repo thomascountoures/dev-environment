@@ -49,11 +49,18 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Telescope
-keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
-keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
-keymap.set("n", "<leader>fs", ":Telescope grep_string<CR>")
-keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
-keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
+-- keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
+-- keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
+-- keymap.set("n", "<leader>fs", ":Telescope grep_string<CR>")
+-- keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
+-- keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
+
+-- fzf-lua
+keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>")
+keymap.set("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>")
+keymap.set("n", "<leader>fs", "<cmd>lua require('fzf-lua').grep_cword({ search = vim.fn.expand('<cword>') })<CR>")
+keymap.set("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>")
+keymap.set("n", "<leader>fh", "<cmd>lua require('fzf-lua').help_tags()<CR>")
 
 -- To Trim Freakin' Whitespaces.
 keymap.set("n", "<leader>tw", "<cmd>%s/\\s\\+$//e<CR>")
