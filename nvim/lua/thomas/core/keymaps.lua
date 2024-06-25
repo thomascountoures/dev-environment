@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.api.nvim_create_user_command("W", "w", {})
 
 local keymap = vim.keymap -- for conciseness
 
@@ -61,9 +62,17 @@ keymap.set("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>")
 keymap.set("n", "<leader>fs", "<cmd>lua require('fzf-lua').grep_cword({ search = vim.fn.expand('<cword>') })<CR>")
 keymap.set("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>")
 keymap.set("n", "<leader>fh", "<cmd>lua require('fzf-lua').help_tags()<CR>")
+keymap.set("n", ";", ":FzfLua buffers<CR>", { noremap = true, silent = true })
+
+-- Key mappings to navigate floating windows above and below
+keymap.set("n", "<leader>w", "<C-w><C-w>", { noremap = true, silent = true })
 
 -- To Trim Freakin' Whitespaces.
 keymap.set("n", "<leader>tw", "<cmd>%s/\\s\\+$//e<CR>")
 
 -- Get rid of highlighting upon hitting enter.
 keymap.set("n", "<CR>", "<cmd>noh<CR>")
+
+-- Opens the float window with the error messages. Useful for yanking them
+-- and pasting them elsewhere (to ask ChatGPT questions? :D)
+keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
